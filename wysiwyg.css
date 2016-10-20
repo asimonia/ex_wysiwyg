@@ -1,0 +1,13 @@
+.people:nth-child(even) {
+	background-color: lightyellow;
+	border: red solid 2px;
+}
+
+.people:nth-child(odd) {
+	background-color: lightblue;
+	border: red solid 2px;
+}
+
+.dotted-border {
+	border-style: dotted;
+}
