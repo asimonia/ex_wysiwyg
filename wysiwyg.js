@@ -52,6 +52,7 @@ var bio = [
 ];
 
 var container = document.getElementById("container");
+var box = document.getElementById("box");
 var placeholder = "";
 
 for (let i = 0; i < bio.length; i++) {
@@ -68,18 +69,23 @@ container.innerHTML = placeholder;
 // Now containerEL will have elements in it
 var containerEl = document.getElementsByClassName("people");
 
-// Event listeners are created
-// When you click on one of the person elements, a dotted border should appear around it.
-// When you click on one of the person elements, the text input should immediately gain focus so that you can start typing.
-// When there is a highlighted person element, and you begin typing in the input box, the person's biography should be immediately bound to what you are typing, letter by letter.
-// When you press the enter/return key when typing in the input field, then the content of the input field should immediately be blank.
 
 for (let i = 0; i < containerEl.length; i++) {
     containerEl[i].addEventListener("click", function (e) {
+    // When you click on one of the person elements, a dotted border should appear around it.
     event.currentTarget.classList.toggle("dotted-border");
+
+    // When you click on one of the person elements, the text input should immediately gain focus.
+    document.getElementById("box").focus()
   });
 }
 
-
+// When you press the enter/return key when typing in the input field, 
+// then the content of the input field should immediately be blank.
+box.addEventListener("keyup", function(e){
+  if (e.keyCode == 13) {
+    box.value = '';
+  }
+});
 
 
