@@ -1,4 +1,4 @@
-var bios = [
+var bio = [
 {
   title: "Samurai",
   name: "Tomoe Gozen",
@@ -23,7 +23,7 @@ var bios = [
   title: "Actor",
   name: "William Shatner",
   bio: " In his seven decades of television, Shatner became a cultural icon for his portrayal of James T. Kirk, Captain of the USS Enterprise, in the Star Trek franchise.",
-  image: "https://en.wikipedia.org/wiki/William_Shatner#/media/File:William_Shatner_by_Gage_Skidmore_2.jpg",
+  image: "https://lh4.googleusercontent.com/-XZ2NLL3YDJE/AAAAAAAAAAI/AAAAAAAADg4/YLj3X-MaIO4/s0-c-k-no-ns/photo.jpg",
   lifespan: {
     birth: 1937,
     death: 2020
@@ -51,16 +51,35 @@ var bios = [
 }
 ];
 
+var container = document.getElementById("container");
+var placeholder = "";
 
-// When you click on one of the person elements, a dotted border should appear around it.
-var container = document.getElementsByClassName("container");
-for (let i = 0; i < container.length; i++) {
-	container.item(i).addEventListener("click", function(e) {
-		document.getElementById("person" + i).classList.toggle("dotted-border");
-	});
+for (let i = 0; i < bio.length; i++) {
+  placeholder += '<article class="people"><header><h4>';
+  placeholder += `${bio[i].title}</h4><h3>`;
+  placeholder += `${bio[i].name}</h3></header><section><img src="`;
+  placeholder += `${bio[i].image}" alt="pic"><p>`;
+  placeholder += `${bio[i].bio}</p><p></p></section><footer><h5>`;
+  placeholder += `${bio[i].lifespan.birth} - ${bio[i].lifespan.death}</h5></footer></article>`;
 }
 
+container.innerHTML = placeholder;
+
+// Now containerEL will have elements in it
+var containerEl = document.getElementsByClassName("people");
+
+// Event listeners are created
+// When you click on one of the person elements, a dotted border should appear around it.
 // When you click on one of the person elements, the text input should immediately gain focus so that you can start typing.
 // When there is a highlighted person element, and you begin typing in the input box, the person's biography should be immediately bound to what you are typing, letter by letter.
 // When you press the enter/return key when typing in the input field, then the content of the input field should immediately be blank.
+
+for (let i = 0; i < containerEl.length; i++) {
+    containerEl[i].addEventListener("click", function (e) {
+    event.currentTarget.classList.toggle("dotted-border");
+  });
+}
+
+
+
 

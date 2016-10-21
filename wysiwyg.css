@@ -1,13 +1,36 @@
+input#box {
+	margin: 0 40%;
+}
+
 .people:nth-child(even) {
 	background-color: lightyellow;
-	border: red solid 2px;
 }
 
 .people:nth-child(odd) {
 	background-color: lightblue;
-	border: red solid 2px;
 }
 
 .dotted-border {
-	border-style: dotted;
+	border: 3px dotted black;
+}
+
+.people img {
+	height: 200px;
+	width: 200px;
+    overflow: hidden;
+    border-radius: .5em;
+}
+
+.people {
+  width: 20%;
+  margin: 1.125%;
+  display: inline-block;
+  background: rgba(11,44,66,.5);
+  color: seagreen;
+  padding: 1em;
+  text-align: center;
+  border-radius: .25em;
+  box-shadow: 0 .25em .5em rgba(14, 14, 40, .8);
+  font-size: .85em;
+  text-shadow: 1px 1px 0 rgba(14, 14, 40, .8);
 }
